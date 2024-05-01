@@ -2,7 +2,7 @@
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+                <h1 class="fill-current " style="font-size: 30px"> <b>LibraRental</b> </h1>
             </a>
         </x-slot>
 
@@ -29,8 +29,11 @@
             <!-- Address -->
             <div class="mt-4">
                 <x-label for="address" :value="__('Alamat')" />
+v                 <textarea name="address" id="address" cols="40" rows="4" :value="old('address')" required>
 
-                <x-input id="address" class="block mt-1 w-full" type="text" name="address" :value="old('address')" required />
+
+              </textarea>
+                {{-- <x-input id="address" class="block mt-1 w-full" type="text" name="address" :value="old('address')" required /> --}}
             </div>
 
               <!-- Phone -->

@@ -29,7 +29,7 @@
             <!-- Address -->
             <div class="mt-4">
                 <x-label for="address" :value="__('Alamat')" />
-v                 <textarea name="address" id="address" cols="40" rows="4" :value="old('address')" required>
+            <textarea name="address" id="address" cols="42" rows="4" :value="old('address')" required>
 
 
               </textarea>
@@ -46,7 +46,7 @@ v                 <textarea name="address" id="address" cols="40" rows="4" :valu
               <!-- Address -->
               <div class="mt-4">
                 <x-label for="gender" :value="__('Jenis Kelamin')" />
-                <select id="gender" name="gender" class="form-select" aria-label="Jenis Kelamin">
+                <select id="gender" name="gender" class="bg-gray-50 border text-dark border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500t" aria-label="Jenis Kelamin">
                     <option value="laki-laki">Laki-laki</option>
                     <option value="perempuan">Perempuan</option>
                 </select>
@@ -72,11 +72,11 @@ v                 <textarea name="address" id="address" cols="40" rows="4" :valu
 
             <div class="flex items-center justify-end mt-4">
                 <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
+                    {{ __('sudah punya akun?') }}
                 </a>
 
                 <x-button class="ml-4">
-                    {{ __('Register') }}
+                    {{ __('Daftar') }}
                 </x-button>
             </div>
         </form>

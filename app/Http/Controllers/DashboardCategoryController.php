@@ -27,7 +27,7 @@ class DashboardCategoryController extends Controller
      */
     public function create()
     {
-        return view('admin.categories.create',);
+        return view('admin.categories.create');
     }
 
     /**
@@ -38,7 +38,13 @@ class DashboardCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'name' => 'required|unique:categories|max:255'
+        ]);
+
+        Category::create($validated);
+
+        return redirect('/admin/categories')->with('success', 'Kategori baru berhasil di tambahkan!!');
     }
 
     /**
@@ -60,7 +66,10 @@ class DashboardCategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        //
+        return view('admin.categories.edit',[
+            'categories' => $category
+            // 'categories' => Category::all()
+        ]);
     }
 
     /**
@@ -72,7 +81,18 @@ class DashboardCategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        //
+        $rules = [
+            'name' => 'required|unique:categories|max:255'
+        ];
+        if ($request->slug != $category->slug) {
+            $rules['slug'] = 'required|unique:categories';
+         }
+         $validated = $request->validate($rules);
+         Category::where('id', $category->id)
+               ->update($validated);
+
+
+         return redirect('/admin/categories')->with('success', 'Kategori berhasil di perbarui!!');
     }
 
     /**
@@ -83,7 +103,9 @@ class DashboardCategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        Category::destroy($category->id);
+
+        return redirect('/admin/categories')->with('success', 'Kategori berhasil di hapus!!');
     }
 
     public function checkslug(Request $request){

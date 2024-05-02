@@ -23,7 +23,7 @@ class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-cente
     <table class="table table-striped table-sm">
       <thead>
         <tr>
-          <th scope="col">#</th>
+          <th scope="col">No</th>
           <th scope="col">Nama</th>
           <th scope="col">Slug</th>
           <th scope="col">kategori</th>
@@ -39,7 +39,7 @@ class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-cente
       <tbody>
         @foreach ($books as $book)
         <tr>
-          <td></td>
+          <td>{{ $loop->iteration }}</td>
           <td>{{ $book->name_book }}</td>
           <td>{{ $book->slug }}</td>
           <td>{{ $book->category->name }}</td>

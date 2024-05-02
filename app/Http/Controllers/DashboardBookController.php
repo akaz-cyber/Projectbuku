@@ -35,7 +35,7 @@ class DashboardBookController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**
@@ -46,7 +46,7 @@ class DashboardBookController extends Controller
      */
     public function show(Book $book)
     {
-        //
+
     }
 
     /**

@@ -32,7 +32,7 @@
                     <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
                         @if(auth()->user()->isAdmin())
                             <li>
-                                <a class="dropdown-item" href="{{ route('dashboard') }}">Dashboard</a>
+                                <a class="dropdown-item" href="{{ route('admin.admindashboard') }}">Dashboard</a>
                             </li>
                         @endif
                         <li>

@@ -14,7 +14,7 @@ class DashboardBookController extends Controller
      */
     public function index()
     {
-        return view('admin.books.index');
+        return view('admin.books.index', ['books' => Book::all()]);
     }
 
     /**
@@ -24,7 +24,7 @@ class DashboardBookController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.books.create', ['books' => Book::all()]);
     }
 
     /**

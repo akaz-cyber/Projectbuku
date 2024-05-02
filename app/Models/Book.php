@@ -2,10 +2,29 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Category;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Book extends Model
 {
     use HasFactory;
+    protected $guarded = ['id'];
+    public function category(){
+        return $this->belongsTo(Category::class);
+    }
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+    public function sluggable(): array
+{
+    return [
+        'slug' => [
+            'source' => 'name_book'
+        ]
+    ];
+}
+
+
 }

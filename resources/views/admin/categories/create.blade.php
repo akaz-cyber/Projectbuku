@@ -15,7 +15,7 @@
           is-invalid
           @enderror">Name</label>
             <input type="text" class="form-control" id="name" name="name" required autofocus value="{{ old('name') }}">
-            @error('title')
+            @error('name')
             <div class="invalid-feedback text-start">
                 {{ $message }}
             </div>
@@ -41,18 +41,14 @@
 
 
 <script>
-    const title = document.querySelector('#title');
+    const name = document.querySelector('#name');
   const slug = document.querySelector('#slug');
 
-  title.addEventListener('change', function(){
-    fetch('/dashboard/posts/checkSlug?title=' + title.value)
+  name.addEventListener('change', function(){
+    fetch('/dashboard/book/checkSlug?name=' + name.value)
     .then(response => response.json())
     .then(data => slug.value = data.slug)
   });
-
-  document.addEventListener('trix-file-accept', function(e){
-    e.preventDefault();
-  })
 
 </script>
 

@@ -39,6 +39,9 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/userdashboard', [UserDashboardController::class, 'index'])->name('/');
     });
 
+Route::get('/dashboard/book/checkSlug', [DashboardCategoryController::class, 'checkSlug'])->middleware('admin');
+
+
 Route::resource('/admin/categories', DashboardCategoryController::class)->middleware('admin');
 Route::resource('/admin/book', DashboardBookController::class)->middleware('admin');
 

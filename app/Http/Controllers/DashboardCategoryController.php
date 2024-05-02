@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Cviebrock\EloquentSluggable\Services\SlugService;
 
 class DashboardCategoryController extends Controller
 {
@@ -83,5 +84,12 @@ class DashboardCategoryController extends Controller
     public function destroy(Category $category)
     {
         //
+    }
+
+    public function checkslug(Request $request){
+
+        $slug = SlugService::createSlug(Category::class, 'slug', $request->name);
+        return response()->json(['slug' => $slug]);
+
     }
 }

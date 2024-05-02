@@ -30,13 +30,18 @@
                       Welcome {{ auth()->user()->fullname }} Yan!!
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                      <li>
+                        @if(auth()->user()->isAdmin())
+                            <li>
+                                <a class="dropdown-item" href="{{ route('dashboard') }}">Dashboard</a>
+                            </li>
+                        @endif
+                        <li>
                         <form action="/logout" method="POST">
                            @csrf
                            <button type="submit" class="dropdown-item">Logout</button>
 
                         </form>
-
+                      </li>
                     </ul>
                   </li>
                 </ul>

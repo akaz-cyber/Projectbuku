@@ -1,8 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardBookController;
 use App\Http\Controllers\UserDashboardController;
 use App\Http\Controllers\AdminDashboardController;
+use App\Http\Controllers\DashboardCategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,10 +31,15 @@ require __DIR__.'/auth.php';
 //     return view('admin.admindashboard');
 //     })->middleware(['auth', 'admin']);
 
-    Route::middleware(['auth', 'admin'])->group(function () {
+Route::middleware(['auth', 'admin'])->group(function () {
         Route::get('/admindashboard', [AdminDashboardController::class, 'index'])->name('admin.admindashboard');
     });
 
-    Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth'])->group(function () {
         Route::get('/userdashboard', [UserDashboardController::class, 'index'])->name('/');
     });
+
+Route::resource('/admin/categories', DashboardCategoryController::class)->middleware('admin');
+Route::resource('/admin/book', DashboardBookController::class)->middleware('admin');
+
+

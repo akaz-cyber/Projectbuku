@@ -16,12 +16,12 @@ class CreateBooksTable extends Migration
         Schema::create('books', function (Blueprint $table) {
             $table->id();
             $table->foreignId('category_id');
-            $table->string('name_book');
-            $table->string('slug');
+            $table->string('name_book')->unique();
+            $table->string('slug')->unique();
             $table->string('author');
             $table->string('cover')->nullable();
-            $table->string('excerpt');
-            $table->string('description_book');
+            $table->text('excerpt');
+            $table->text('description_book');
             $table->string('book_pdf')->nullable();
             $table->string('stok');
             $table->timestamps();

@@ -40,7 +40,7 @@ class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-cente
                 <form action="/admin/categories/{{ $category->slug }}" method="POST">
                     @method('delete')
                     @csrf
-                <button class="btn btn-danger border-0" onclick="return confirm('are you sure?')" type="submit" ><i class="fa fa-trash-o" style="font-size:24px"></i></button>
+                <button class="btn btn-danger border-0" onclick="return confirm('Yakin ingin di hapus?')" type="submit" ><i class="fa fa-trash-o" style="font-size:24px"></i></button>
                 </form>
             </div>
         </td>

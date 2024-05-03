@@ -4,11 +4,12 @@ namespace App\Models;
 
 use App\Models\Category;
 use Illuminate\Database\Eloquent\Model;
+use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Book extends Model
 {
-    use HasFactory;
+    use HasFactory, Sluggable;
     protected $guarded = ['id'];
     public function category(){
         return $this->belongsTo(Category::class);
@@ -18,13 +19,13 @@ class Book extends Model
         return 'slug';
     }
     public function sluggable(): array
-{
-    return [
-        'slug' => [
-            'source' => 'name_book'
-        ]
-    ];
-}
+    {
+        return [
+            'slug' => [
+                'source' => 'name'
+            ]
+        ];
+    }
 
 
 }

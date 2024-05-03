@@ -47,28 +47,28 @@
     <div class="col-lg-12">
         <div class="d-flex">
             <div class="card me-2" style="width: 18rem;">
-                <img src="https://source.unsplash.com/1000x1000/?travel" class="card-img-top" alt="...">
+                <img src="https://source.unsplash.com/1000x1000/?book" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title text-center">Nama buku</h5>
                   <p class="text-center mt-2">Nama kategori</p>
                 </div>
               </div>
               <div class="card me-2" style="width: 18rem;">
-                <img src="https://source.unsplash.com/1000x1000/?travel" class="card-img-top" alt="...">
+                <img src="https://source.unsplash.com/1000x1000/?book" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title text-center">Nama buku</h5>
                   <p class="text-center mt-2">Nama kategori</p>
                 </div>
               </div>
               <div class="card me-2" style="width: 18rem;">
-                <img src="https://source.unsplash.com/1000x1000/?travel" class="card-img-top" alt="...">
+                <img src="https://source.unsplash.com/1000x1000/?book" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title text-center">Nama buku</h5>
                   <p class="text-center mt-2">Nama kategori</p>
                 </div>
               </div>
               <div class="card" style="width: 18rem;">
-                <img src="https://source.unsplash.com/1000x1000/?travel" class="card-img-top" alt="...">
+                <img src="https://source.unsplash.com/1000x1000/?book" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title text-center">Nama buku</h5>
                   <p class="text-center mt-2">Nama kategori</p>

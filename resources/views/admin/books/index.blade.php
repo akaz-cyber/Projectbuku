@@ -18,7 +18,7 @@ class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-cente
   </div>
 @endif
 
-<div class="table-responsive col-lg-11">
+<div class="table-responsive col-lg-12">
     <a class="btn btn-success mb-3" href="/admin/book/create">Tambah Buku</a>
     <table class="table table-striped table-sm">
       <thead>
@@ -44,20 +44,29 @@ class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-cente
           <td>{{ $book->slug }}</td>
           <td>{{ $book->category->name }}</td>
           <td>{{ $book->author }}</td>
-          <td>{{ $book->cover }}</td>
+          <td><img class="img-fluid mb-md-4 mt-2" src="{{ asset('storage/' . $book->cover) }}" class="card-img-top"></td>
           <td>{{ $book->excerpt }}</td>
           <td>{{ $book->description_book }}</td>
-          <td>{{ $book->book_pdf }}</td>
+          <td>
+            @if ($book->book_pdf)
+            <a href="{{ asset('storage/' . $book->book_pdf) }}" target="_blank" class="btn btn-primary"><i class="fa fa-eye" style="font-size:24px"></i></a>
+
+                @else
+                <p>Ebook tidak ada</p>
+
+                @endif
+
+        </td>
+
           <td>{{ $book->stok }}</td>
 
           <td>
             <div class="d-flex ">
-                <a class="btn btn-primary border-0 me-2" href="/dashboard//"><i class="fa fa-eye" style="font-size:24px"></i></a>
-                <a class="btn btn-primary border-0 me-2" href="/dashboard///edit"><i class="fa fa-edit" style="font-size:24px"></i></a>
-                <form action="/dashboard/categories/" method="POST">
+                <a class="btn btn-primary border-0 me-2" href="/admin/book/{{ $book->slug }}/edit"><i class="fa fa-edit" style="font-size:24px"></i></a>
+                <form action="/admin/book/{{ $book->slug }}" method="POST">
                     @method('delete')
                     @csrf
-                <button class="btn btn-danger border-0" onclick="return confirm('are you sure?')" type="submit" ><i class="fa fa-trash-o" style="font-size:24px"></i></button>
+                <button class="btn btn-danger border-0" onclick="return confirm('Yakin ingin di hapus?')" type="submit" ><i class="fa fa-trash-o" style="font-size:24px"></i></button>
                 </form>
             </div>
         </td>

@@ -49,6 +49,16 @@ class DatabaseSeeder extends Seeder
             'role_id' => '1',
         ]);
 
+        DB::table('users')->insert([
+            'email' => 'user@gmail.com',
+            'fullname' => 'user',
+            'address' => 'jln hergamana',
+            'phone_number' => '0895347086501',
+            'gender' => 'laki-laki',
+            'password' => Hash::make('aka12345'),
+            'role_id' => '2',
+        ]);
+
 
         // User::factory(10)->create();
     }

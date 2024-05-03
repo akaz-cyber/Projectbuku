@@ -24,6 +24,7 @@
       </svg>
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/dashboard/">
 
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/trix@2.0.8/dist/trix.css">
 
 
     <!-- Bootstrap core CSS -->
@@ -68,6 +69,7 @@
     </script>
 
     <script src="{{ asset('js/dashboard.js') }}"></script>
+    <script type="text/javascript" src="https://unpkg.com/trix@2.0.8/dist/trix.umd.min.js"></script>
     <script type="text/javascript" src="https://unpkg.com/trix@2.0.8/dist/trix.umd.min.js"></script>
 </body>
 

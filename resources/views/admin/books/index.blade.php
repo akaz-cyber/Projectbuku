@@ -25,7 +25,6 @@ class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-cente
         <tr>
           <th scope="col">No</th>
           <th scope="col">Nama</th>
-          <th scope="col">Slug</th>
           <th scope="col">kategori</th>
           <th scope="col">Pembuat</th>
           <th scope="col">Sampul</th>
@@ -41,7 +40,6 @@ class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-cente
         <tr>
           <td>{{ $loop->iteration }}</td>
           <td>{{ $book->name_book }}</td>
-          <td>{{ $book->slug }}</td>
           <td>{{ $book->category->name }}</td>
           <td>{{ $book->author }}</td>
           <td><img class="img-fluid mb-md-4 mt-2" src="{{ asset('storage/' . $book->cover) }}" class="card-img-top"></td>
